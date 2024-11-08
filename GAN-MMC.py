@@ -135,7 +135,7 @@ class Gan():
         else:
             self.generator = Generator()
             self.discriminator = Discriminator()
-        self.optimizer_G = torch.optim.Adam(self.generator.parameters(), lr=0.001)
+        self.optimizer_G = torch.optim.Adam(self.generator.parameters(), lr=0.005)
         self.optimizer_D = torch.optim.Adam(self.discriminator.parameters(), lr=0.0001)
 
     def discriminator_loss(self,LF_X, real_X, M):
@@ -225,12 +225,12 @@ class Config():
     #name = 'shubert'
     num = 10000
     p_miss = 0.975
-    alpha = 200
+    alpha = 20
     train_batch_size = 256
     train_number_epochs = 100
     Data_size = (1, 20, 10)
     Data_area = 200
-    beta = 100
+    beta = 10
     use_gpu = True  # set it to True to use GPU and False to use CPU
 
 if __name__ == '__main__':
